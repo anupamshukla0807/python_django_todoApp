@@ -1,0 +1,82 @@
+/* todo.css */
+
+html{
+    font-size: 18px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 10px;
+}
+
+.todo-list,#search-results-section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    margin: 0% auto;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.add_button{
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.add_button:hover {
+    background-color: #bd1616;
+}
+
+.view_button{
+margin: block end 100%;
+padding: 5px 10px;
+margin-bottom: 3px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>View TODO Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/view_todo.css' %}">
+</head>
+<body>
+    <h1>View TODO Item</h1>
+    <div class="todo-item">
+        <h2>{{ todo_item.title }}</h2>
+        <p>Status: {% if todo_item.completed %}Completed{% else %}Incomplete{% endif %}</p>
+        <h2>Task</h2>
+        <p>{{ todo_item.task }}</p>
+        <!--back to todo list-->
+        <a href="{% url 'todo_list' %}" class="back-button">&larr;</a>
+         <!-- Edit Button -->
+         <a href="{% url 'edit_todo' todo_item.id %}" class="back-button">Edit</a>
+        
+         <!-- Delete Button -->
+         <form method="post" action="{% url 'delete_todo' todo_item.id %}" class="delete-form">
+             {% csrf_token %}
+             <input type="submit" value="Delete" class="back-button">
+         </form>
+    </div>
+</body>
+</html>

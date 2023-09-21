@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    {%load static%}
+<head>
+    <title>Edit TODO Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search_todo.css' %}">
+
+</head>
+<body>
+    <div class="form-group">
+        <form method="post" class="search-form">
+            {% csrf_token %}
+            <input type="text" name="title" placeholder="Search by title" value="{{ request.GET.title }}">
+            <label for="completed">Completed:</label>
+            <select name="completed" id="completed">
+                <option value="">All</option>
+                <option value="true" {% if request.GET.completed == 'true' %}selected{% endif %}>Yes</option>
+                <option value="false" {% if request.GET.completed == 'false' %}selected{% endif %}>No</option>
+            </select>
+            <input type="submit" value="Search" class="search-button">  
+            <a href="{% url 'todo_list' %}" class="search-button">&larr;</a>     
+        </form>  
+    </div>
+</body>
+</html>
+
+
+

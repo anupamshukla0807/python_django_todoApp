@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>Confirm Deletion</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <h1>Confirm Deletion</h1>
+    <p>Are you sure you want to delete the following TODO item?</p>
+    <p><strong>{{ todo_item.title }}</strong></p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete" class="delete-button">
+    </form>
+    <a href="{% url 'view_todo' todo_item.id %}" class="cancel-button">Cancel</a>
+</body>
+</html>

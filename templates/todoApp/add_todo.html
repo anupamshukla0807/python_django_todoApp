@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>Add TODO Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add_todo.css' %}">
+
+</head>
+<body>
+    <h1>Add Todo Item</h1>
+    
+    <section>
+        <div class="add-item">
+            <form method="post"> 
+                {% csrf_token %}
+                <div class='form-group'>
+                    <label for="title">
+                        <h1>Title:</h1>
+                    </label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <br><br>
+                <div class='form-group'>
+                    <label for="title">
+                        <h1>Task:</h1>
+                    </label>
+                    <textarea type='text' id='task' name='task'  required></textarea>
+                    <br><br>
+                    <input type="submit" class="back-button" value="Add" >
+                </div>
+            </form>
+            <a href="{% url 'todo_list' %}"><button class="back-button">&larr;</button></a>
+        </div>
+    </section>
+</body>
+</html>

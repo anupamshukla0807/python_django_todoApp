@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>TODO List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/todo.css' %}">
+</head>
+<body> 
+    <section>
+        <div id="search-results-section">
+            <h2>Search Results</h2>
+            <ul>
+                <label> search For title</label>
+                {% if todo_items%}
+                    <li>{{title_query}}</li>
+                    {% for key in todo_items %}
+                        <li class="search-items">{{key}}</li>
+                        <a href="{% url 'view_todo' key.id %}" ><button class="add_button ">View Task</button></a>
+                    {% endfor %}
+                {%else%}
+                <li> No Match Found in the list</li>
+                <a href="{% url 'search-result' %}" ><button class="add_button ">&larr;</button></a>
+                {%endif%}
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

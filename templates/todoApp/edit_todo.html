@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>Edit TODO Item</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/add_todo.css' %}">
+</head>
+<body>
+    <h1>Edit Todo Item</h1>
+    <form method="post">
+        <div class="add-item">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Save Changes" class="back-button save-button">
+            <a href="{% url 'view_todo' todo_item.id %}" class="back-button">Cancel</a>
+        </div>
+    </form>
+    
+</body>
+</html>

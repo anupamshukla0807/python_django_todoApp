@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+    <title>TODO List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/todo.css' %}">
+</head>
+<body> 
+    <section>
+        
+        <div class="todo-list" id="todo-list-section">
+            <h1>TODO List</h1>
+            <ul>
+                {% for todo_item in todo_items %}
+                    <li>
+                    <strong> {{ todo_item.title }}</strong>
+                        <a href="{% url 'view_todo' todo_item.id %}" ><button class="add_button view_button">View Task</button></a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'add_todo' %}"><button class="add_button  ">Add Todo</button></a>
+            <a href="{% url 'search_todo' %}"><button class="add_button">search</button></a>
+        </div>
+    </section>
+
+
+    
+</body>
+</html>
